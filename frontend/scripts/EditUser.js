@@ -3,14 +3,12 @@ const fullNameInput = document.querySelector("#fullname");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 
-
-
 async function getEditUser() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
   try {
-    let resp = await fetch(`http://localhost:5000/users/${id}`);
+    let resp = await fetch(`https://premimum-js.onrender.com/users/${id}`);
     let data = await resp.json();
     console.log(data);
 
@@ -42,7 +40,7 @@ updateForm.addEventListener("submit", async (e) => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    await fetch(`http://localhost:5000/users/${id}`, {
+    await fetch(`https://premimum-js.onrender.com/users/${id}`, {
       method: "PUT",
       body: payload,
       headers: {

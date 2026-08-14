@@ -18,7 +18,7 @@ createForm.addEventListener("submit", async (e) => {
   console.log(payload);
 
   try {
-    let resp = await fetch("http://localhost:5000/users", {
+    let resp = await fetch("https://premimum-js.onrender.com/users", {
       method: "POST",
       body: payload,
       headers: {
@@ -28,7 +28,6 @@ createForm.addEventListener("submit", async (e) => {
 
     console.log(resp);
     alert("user created");
-
   } catch (error) {
     console.log(error);
     alert("unable to create user");

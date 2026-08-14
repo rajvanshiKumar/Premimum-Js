@@ -2,7 +2,7 @@ const tableBody = document.querySelector("#users-table-body");
 
 async function getUsers() {
   try {
-    let resp = await fetch("http://localhost:5000/users");
+    let resp = await fetch("https://premimum-js.onrender.com/users");
     let data = await resp.json();
     // console.log(data);
     displayUsers(data);
@@ -51,7 +51,7 @@ async function deleteUser(id) {
 
 function editUser(id) {
   console.log("edit id", id);
-  window.location.href = `EditUser.html?id=${id}`
+  window.location.href = `EditUser.html?id=${id}`;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
